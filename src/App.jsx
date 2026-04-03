@@ -26,11 +26,12 @@ const PROJECTS = [
   {
     id: 3,
     title: 'Zendesk Ticket AI Agent',
-    description: 'AI Agent that swiftly responds to users if I am solving tech problems.',
-    tags: ['Zendesk API', 'Claude', ],
+    description: 'AI Agent that swiftly responds and asks questions to users through a 7-step response architecture.',
+    tags: ['Zendesk API', 'Claude', 'Slack' ],
     url: 'https://your-project-url.vercel.app',
     accent: '#8a6500',
     emoji: '🧑‍🔧💻',
+    image: "/screenshots/project-three.png"
   },
   // {
   //   id: 4,
@@ -62,10 +63,9 @@ const PROJECTS = [
 ]
 
 const LINKS = [
-  { label: 'GitHub', url: 'https://github.com/yourusername', icon: '🐙' },
-  { label: 'Twitter', url: 'https://twitter.com/yourusername', icon: '✦' },
-  { label: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: '💼' },
-  { label: 'Email', url: 'mailto:lewis.r.stone@gmail.com', icon: '✉' },
+  { label: 'GitHub', url: 'https://github.com/stolenwise', icon: '🐙' },
+  { label: 'LinkedIn', url: 'https://linkedin.com/in/lewisrstone', icon: '💼' },
+  { label: 'Email', url: 'mailto:lewis.r.stone@gmail.com', icon: '📬' },
 ]
 
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
