@@ -26,8 +26,8 @@ const PROJECTS = [
   {
     id: 3,
     title: 'Zendesk Ticket AI Agent',
-    description: 'AI Agent that swiftly responds and asks questions to users through a 7-step response architecture.',
-    tags: ['Zendesk API', 'Claude', 'Slack' ],
+    description: 'AI Agent that handles IT support triage with users through historical ticket context and a 7-step response architecture. It notifies me when a ticket needs my attnetion, a user is C-suite or is disgruntled. This helps me in my Desktop Support duties.',
+    tags: ['Zendesk', 'Claude', 'Slack/Discord', 'Notion', 'Python' ],
     url: 'https://your-project-url.vercel.app',
     accent: '#8a6500',
     emoji: '🧑‍🔧💻',
