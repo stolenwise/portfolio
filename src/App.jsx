@@ -211,8 +211,8 @@ function Hero() {
           src="/logo.png"
           alt="Lewis Stone"
           style={{
-            width: 'clamp(56px, 8vw, 96px)',
-            height: 'clamp(56px, 8vw, 96px)',
+            width: 'clamp(56px, 20vw, 300px)',
+            height: 'clamp(56px, 20vw, 300px)',
             objectFit: 'contain',
             flexShrink: 0,
           }}
