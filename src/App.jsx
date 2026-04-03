@@ -199,16 +199,34 @@ function Hero() {
         available for projects
       </div>
 
-      <h1 style={{
-        fontSize: 'clamp(3rem, 8vw, 6.5rem)',
-        fontWeight: 900,
-        lineHeight: 1.05,
-        letterSpacing: '-0.03em',
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 'clamp(0.75rem, 2vw, 1.5rem)',
         marginBottom: '0.5rem',
-        color: '#0a0a0f',
+        flexWrap: 'wrap',
       }}>
-        Lewis Stone
-      </h1>
+        <img
+          src="/logo.png"
+          alt="Lewis Stone"
+          style={{
+            width: 'clamp(56px, 8vw, 96px)',
+            height: 'clamp(56px, 8vw, 96px)',
+            objectFit: 'contain',
+            flexShrink: 0,
+          }}
+        />
+        <h1 style={{
+          fontSize: 'clamp(3rem, 8vw, 6.5rem)',
+          fontWeight: 900,
+          lineHeight: 1.05,
+          letterSpacing: '-0.03em',
+          color: '#0a0a0f',
+        }}>
+          Lewis Stone
+        </h1>
+      </div>
 
       <h2 style={{
         fontSize: 'clamp(1.25rem, 3vw, 2rem)',
