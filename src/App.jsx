@@ -5,12 +5,13 @@ import { useState, useEffect } from 'react'
 const PROJECTS = [
   {
     id: 1,
-    title: 'The Librarian Agent',
-    description: 'AI Agent that discovers, downloads, catalogues, and organises public domain books around the clock."',
-    tags: ["Python 3", "SQLite", "n8n", "Ollama"],
-    url: 'https://librarian-agent-omega.vercel.app/',
+    title: 'Project One',
+    description: 'A short description of what this app does and what makes it interesting.',
+    tags: ['React', 'AI'],
+    url: 'https://your-project-url.vercel.app',
     accent: '#c4006e',
-    emoji: '📚👨‍🏫',
+    emoji: '🤖',
+    image: null, // set to e.g. '/screenshots/project-one.png' to show a preview
   },
   {
     id: 2,
@@ -211,8 +212,8 @@ function Hero() {
           src="/logo.png"
           alt="Lewis Stone"
           style={{
-            width: 'clamp(56px, 20vw, 300px)',
-            height: 'clamp(56px, 20vw, 300px)',
+            width: 'clamp(56px, 8vw, 96px)',
+            height: 'clamp(56px, 8vw, 96px)',
             objectFit: 'contain',
             flexShrink: 0,
           }}
@@ -420,61 +421,89 @@ function ProjectCard({ project }) {
         background: hovered ? 'rgba(0,0,0,0.03)' : 'rgba(0,0,0,0.02)',
         border: `1px solid ${hovered ? project.accent + '60' : 'rgba(0,0,0,0.09)'}`,
         borderRadius: 20,
-        padding: '2rem',
+        padding: 0,
         transition: 'all 0.25s ease',
         transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
-        boxShadow: hovered ? `0 16px 50px ${project.accent}15` : '0 1px 4px rgba(0,0,0,0.06)',
+        boxShadow: hovered ? `0 16px 50px ${project.accent}20` : '0 1px 4px rgba(0,0,0,0.06)',
         cursor: 'pointer',
         textDecoration: 'none',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Corner accent */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        width: 80,
-        height: 80,
-        background: `radial-gradient(circle at top right, ${project.accent}20, transparent 70%)`,
-        borderRadius: '0 20px 0 0',
-        transition: 'opacity 0.25s',
-        opacity: hovered ? 1 : 0,
-      }} />
-
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-        marginBottom: '1rem',
-      }}>
-        <span style={{
-          fontSize: '2rem',
-          lineHeight: 1,
-          filter: hovered ? 'none' : 'grayscale(0.2)',
-          transition: 'filter 0.25s',
+      {/* Screenshot preview or emoji fallback */}
+      {project.image ? (
+        <div style={{
+          width: '100%',
+          aspectRatio: '16/9',
+          overflow: 'hidden',
+          borderRadius: '20px 20px 0 0',
+          background: '#f0f0f4',
+          position: 'relative',
+        }}>
+          <img
+            src={project.image}
+            alt={project.title}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'top',
+              transition: 'transform 0.4s ease',
+              transform: hovered ? 'scale(1.04)' : 'scale(1)',
+              display: 'block',
+            }}
+          />
+          {/* Subtle overlay on hover */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: `linear-gradient(to bottom, transparent 60%, ${project.accent}18)`,
+            opacity: hovered ? 1 : 0,
+            transition: 'opacity 0.3s',
+          }} />
+        </div>
+      ) : (
+        <div style={{
+          width: '100%',
+          aspectRatio: '16/9',
+          borderRadius: '20px 20px 0 0',
+          background: `linear-gradient(135deg, ${project.accent}12, ${project.accent}04)`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '3.5rem',
         }}>
           {project.emoji}
-        </span>
-        <span style={{
-          fontSize: '1.2rem',
-          opacity: hovered ? 1 : 0.25,
-          transition: 'opacity 0.25s, transform 0.25s',
-          transform: hovered ? 'translate(2px, -2px)' : 'translate(0,0)',
-          color: project.accent,
-        }}>↗</span>
-      </div>
+        </div>
+      )}
 
-      <h3 style={{
-        fontSize: '1.1rem',
-        fontWeight: 700,
-        marginBottom: '0.5rem',
-        color: hovered ? '#0a0a0f' : 'rgba(10,10,15,0.85)',
-        transition: 'color 0.2s',
-      }}>
-        {project.title}
-      </h3>
+      {/* Card body */}
+      <div style={{ padding: '1.5rem' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          marginBottom: '0.6rem',
+        }}>
+          <h3 style={{
+            fontSize: '1.05rem',
+            fontWeight: 700,
+            color: hovered ? '#0a0a0f' : 'rgba(10,10,15,0.85)',
+            transition: 'color 0.2s',
+          }}>
+            {project.title}
+          </h3>
+          <span style={{
+            fontSize: '1.1rem',
+            opacity: hovered ? 1 : 0.25,
+            transition: 'opacity 0.25s, transform 0.25s',
+            transform: hovered ? 'translate(2px, -2px)' : 'translate(0,0)',
+            color: project.accent,
+            flexShrink: 0,
+            marginLeft: '0.5rem',
+          }}>↗</span>
+        </div>
 
       <p style={{
         fontSize: '0.875rem',
@@ -485,21 +514,22 @@ function ProjectCard({ project }) {
         {project.description}
       </p>
 
-      <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-        {project.tags.map(tag => (
-          <span key={tag} style={{
-            fontSize: '0.7rem',
-            padding: '0.2rem 0.65rem',
-            borderRadius: 100,
-            background: `${project.accent}12`,
-            border: `1px solid ${project.accent}35`,
-            color: project.accent,
-            fontFamily: "'Space Mono', monospace",
-            letterSpacing: '0.05em',
-          }}>
-            {tag}
-          </span>
-        ))}
+        <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+          {project.tags.map(tag => (
+            <span key={tag} style={{
+              fontSize: '0.7rem',
+              padding: '0.2rem 0.65rem',
+              borderRadius: 100,
+              background: `${project.accent}12`,
+              border: `1px solid ${project.accent}35`,
+              color: project.accent,
+              fontFamily: "'Space Mono', monospace",
+              letterSpacing: '0.05em',
+            }}>
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </a>
   )
