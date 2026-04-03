@@ -5,12 +5,12 @@ import { useState, useEffect } from 'react'
 const PROJECTS = [
   {
     id: 1,
-    title: 'Project One',
-    description: 'A short description of what this app does and what makes it interesting.',
-    tags: ['React', 'AI'],
-    url: 'https://your-project-url.vercel.app',
+    title: 'The Librarian Agent',
+    description: 'AI Agent - An autonomous system that discovers, downloads, catalogues, and organises public domain books around the clock — driven by the St. Johns College Great Books canon. Zero human intervention. Runs forever."',
+    tags: ["Python 3", "SQLite", "n8n", "Ollama"],
+    url: 'https://librarian-agent-omega.vercel.app/',
     accent: '#c4006e',
-    emoji: '🤖',
+    emoji: '📚👨‍🏫',
   },
   {
     id: 2,
