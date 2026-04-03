@@ -11,7 +11,7 @@ const PROJECTS = [
     url: 'https://your-project-url.vercel.app',
     accent: '#c4006e',
     emoji: '🤖',
-    image: null, // set to e.g. '/screenshots/project-one.png' to show a preview
+    image: "/screenshots/project-one.png", // set to e.g. '/screenshots/project-one.png' to show a preview
   },
   {
     id: 2,
