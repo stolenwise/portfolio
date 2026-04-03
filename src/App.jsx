@@ -6,7 +6,7 @@ const PROJECTS = [
   {
     id: 1,
     title: 'The Librarian Agent',
-    description: 'AI Agent - An autonomous system that discovers, downloads, catalogues, and organises public domain books around the clock — driven by the St. Johns College Great Books canon. Zero human intervention. Runs forever."',
+    description: 'AI Agent that discovers, downloads, catalogues, and organises public domain books around the clock."',
     tags: ["Python 3", "SQLite", "n8n", "Ollama"],
     url: 'https://librarian-agent-omega.vercel.app/',
     accent: '#c4006e',
