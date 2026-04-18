@@ -378,7 +378,7 @@ function About() {
         <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {[
             { label: 'Agents built', value: '3+', color: '#007a68' },
-            { label: 'Projects abandoned at 2am — 27', value: '∞', color: '#2564d1ff' },
+            { label: 'Dead ends explored — 27', value: '27', color: '#2564d1ff' },
             { label: 'Agent ideas', value: '∞', color: '#8a6500' },
           
           ].map(stat => (
