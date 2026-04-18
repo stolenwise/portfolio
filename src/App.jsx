@@ -28,7 +28,7 @@ const PROJECTS = [
     title: 'Zendesk Ticket AI Agent',
     description: 'AI Agent that handles IT support triage with users through historical ticket context and a 7-step response architecture. It notifies me when a ticket needs my attnetion, a user is C-suite or is disgruntled. This helps me in my Desktop Support duties.',
     tags: ['Zendesk', 'Claude', 'Slack/Discord', 'Notion', 'Python', 'Markdown' ],
-    url: 'https://your-project-url.vercel.app',
+    url: 'https://zd-portfolio-page.vercel.app/',
     accent: '#8a6500',
     emoji: '🧑‍🔧💻',
     image: "/screenshots/project-three.png"
@@ -377,9 +377,10 @@ function About() {
 
         <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {[
-            { label: 'Apps shipped', value: '10+', color: '#c4006e' },
-            { label: 'Agents built', value: '5+', color: '#007a68' },
-            { label: 'Technologies', value: '∞', color: '#8a6500' },
+            { label: 'Agents built', value: '3+', color: '#007a68' },
+            { label: 'Projects abandoned at 2am — 27', value: '∞', color: '#2564d1ff' }
+            { label: 'Agent ideas', value: '∞', color: '#8a6500' },
+          
           ].map(stat => (
             <div key={stat.label} style={{
               background: 'rgba(0,0,0,0.03)',
