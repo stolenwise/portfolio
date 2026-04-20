@@ -263,7 +263,7 @@ function Hero() {
         marginBottom: '3rem',
       }}>
         A builder obsessed with AI agents and useful software.
-        Below is a collection of things I've shipped.
+        Below is a collection of things I've built.
       </p>
 
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
